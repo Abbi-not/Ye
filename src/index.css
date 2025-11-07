@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Spotify-inspired Music Portfolio Design System */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 7%;
+    
+    /* Spotify Dark Theme - Main colors */
+    --spotify-black: 0 0% 7%;
+    --spotify-dark-gray: 0 0% 12%;
+    --spotify-gray: 0 0% 18%;
+    --spotify-light-gray: 0 0% 55%;
+    --spotify-green: 141 73% 42%;
+    --spotify-green-hover: 141 73% 48%;
+    --spotify-white: 0 0% 100%;
+    
+    /* Album artwork colors */
+    --album-gradient-1: linear-gradient(135deg, hsl(280, 100%, 70%), hsl(320, 100%, 60%));
+    --album-gradient-2: linear-gradient(135deg, hsl(200, 100%, 70%), hsl(240, 100%, 60%));
+    --album-gradient-3: linear-gradient(135deg, hsl(45, 100%, 70%), hsl(25, 100%, 60%));
+    --album-gradient-4: linear-gradient(135deg, hsl(120, 100%, 70%), hsl(160, 100%, 60%));
+    
+    /* Design system mapping */
+    --background: var(--spotify-black);
+    --foreground: var(--spotify-white);
+
+    --card: var(--spotify-dark-gray);
+    --card-foreground: var(--spotify-white);
+
+    --popover: var(--spotify-gray);
+    --popover-foreground: var(--spotify-white);
+
+    --primary: var(--spotify-green);
+    --primary-foreground: var(--spotify-black);
+
+    --secondary: var(--spotify-gray);
+    --secondary-foreground: var(--spotify-white);
+
+    --muted: var(--spotify-dark-gray);
+    --muted-foreground: var(--spotify-light-gray);
+
+    --accent: var(--spotify-green);
+    --accent-foreground: var(--spotify-black);
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: var(--spotify-white);
+
+    --border: var(--spotify-gray);
+    --input: var(--spotify-gray);
+    --ring: var(--spotify-green);
+
+    --radius: 0.5rem;
+
+    /* Sidebar (like Spotify's left panel) */
+    --sidebar-background: var(--spotify-black);
+    --sidebar-foreground: var(--spotify-light-gray);
+    --sidebar-primary: var(--spotify-green);
+    --sidebar-primary-foreground: var(--spotify-black);
+    --sidebar-accent: var(--spotify-dark-gray);
+    --sidebar-accent-foreground: var(--spotify-white);
+    --sidebar-border: var(--spotify-gray);
+    --sidebar-ring: var(--spotify-green);
+    
+    /* Music-specific design tokens */
+    --player-height: 5rem;
+    --album-size: 200px;
+    --album-size-sm: 160px;
+    --now-playing-glow: 0 0 30px hsla(var(--spotify-green), 0.3);
+    --hover-scale: 1.05;
+    --transition-smooth: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .dark {
+    /* Dark mode is the default for this music theme */
+    --background: var(--spotify-black);
+    --foreground: var(--spotify-white);
+    --card: var(--spotify-dark-gray);
+    --card-foreground: var(--spotify-white);
+    --popover: var(--spotify-gray);
+    --popover-foreground: var(--spotify-white);
+    --primary: var(--spotify-green);
+    --primary-foreground: var(--spotify-black);
+    --secondary: var(--spotify-gray);
+    --secondary-foreground: var(--spotify-white);
+    --muted: var(--spotify-dark-gray);
+    --muted-foreground: var(--spotify-light-gray);
+    --accent: var(--spotify-green);
+    --accent-foreground: var(--spotify-black);
+    --destructive: 0 84% 60%;
+    --destructive-foreground: var(--spotify-white);
+    --border: var(--spotify-gray);
+    --input: var(--spotify-gray);
+    --ring: var(--spotify-green);
+    --sidebar-background: var(--spotify-black);
+    --sidebar-foreground: var(--spotify-light-gray);
+    --sidebar-primary: var(--spotify-green);
+    --sidebar-primary-foreground: var(--spotify-black);
+    --sidebar-accent: var(--spotify-dark-gray);
+    --sidebar-accent-foreground: var(--spotify-white);
+    --sidebar-border: var(--spotify-gray);
+    --sidebar-ring: var(--spotify-green);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
