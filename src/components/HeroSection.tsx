@@ -1,6 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail } from "lucide-react";
+import profileImg from "@/assets/profile.jpg";
 
 export const HeroSection = () => {
   return (
@@ -9,7 +10,7 @@ export const HeroSection = () => {
       
       <div className="relative h-full flex flex-col md:flex-row items-end gap-8 p-8 md:p-12 max-w-7xl mx-auto">
         <img 
-          src="src\assets\profile.png" 
+          src={profileImg} 
           alt="Abinet Argaw" 
           className="w-48 h-48 rounded-full object-cover border-4 border-primary/20 shadow-2xl"
         />
