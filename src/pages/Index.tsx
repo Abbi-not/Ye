@@ -10,6 +10,7 @@ import multiJobScraperImg from "@/assets/img_5893.webp";
 import vinylboxdImg from "@/assets/pala.jpg";
 import tnatImg from "@/assets/lapa.jpg";
 import taskmanImg from "@/assets/lala.png";
+import etaBusImg from "@/assets/taskman.jpg";
 
 interface Project {
   id: number;
@@ -34,6 +35,27 @@ const Index = () => {
   const allProjects: Project[] = [
     {
       id: 1,
+      title: "ETA Bus Service",
+      description: "A mobile bus ticketing app with OTP sign-in, booking, and trip scheduling — live on Google Play",
+      albumArt: etaBusImg,
+      year: "2024",
+      tracks: 8,
+      technologies: ["React Native", "Django", "OTP Auth", "REST API"],
+      demo: "https://play.google.com/store/apps/details?id=com.etaTech.etaBusBooking",
+      longDescription: "A full-featured mobile bus booking platform for Ethiopian travelers. Users can search for buses, book tickets, and schedule trips — all secured with OTP-based sign-in. Built with React Native for a seamless cross-platform experience and a Django REST backend. Published and live on Google Play.",
+      features: [
+        "OTP-based authentication for secure sign-in",
+        "Bus search and filtering by route and time",
+        "Ticket booking and confirmation flow",
+        "Trip scheduling and management",
+        "React Native cross-platform mobile app",
+        "Django REST API backend",
+        "Published on Google Play Store",
+        "Real-time bus availability updates"
+      ]
+    },
+    {
+      id: 2,
       title: "Multi Job Scraper",
       description: "A Flask-based job aggregator that scrapes remote job listings from multiple sources",
       albumArt: multiJobScraperImg,
@@ -54,7 +76,7 @@ const Index = () => {
       ]
     },
     {
-      id: 2,
+      id: 3,
       title: "Vinylboxd",
       description: "A music discovery and rating platform inspired by Letterboxd",
       albumArt: vinylboxdImg,
@@ -75,7 +97,7 @@ const Index = () => {
       ]
     },
     {
-      id: 3,
+      id: 4,
       title: "TNAT - Student Study Platform",
       description: "A Habesha student study buddy platform with Supabase backend",
       albumArt: tnatImg,
@@ -96,7 +118,7 @@ const Index = () => {
       ]
     },
     {
-      id: 4,
+      id: 5,
       title: "TaskMan",
       description: "Task management system with Node.js and PostgreSQL",
       albumArt: taskmanImg,
@@ -122,9 +144,9 @@ const Index = () => {
     const genreProjectMap = {
       "Frontend Harmony": ["Vinylboxd", "TNAT - Student Study Platform"],
       "Backend Beats": ["Multi Job Scraper", "TaskMan"],
-      "Full Stack Symphony": ["Vinylboxd", "TNAT - Student Study Platform", "TaskMan"],
+      "Full Stack Symphony": ["ETA Bus Service", "Vinylboxd", "TNAT - Student Study Platform", "TaskMan"],
       "AI & Data Experimental": ["Multi Job Scraper"],
-      "Mobile Rhythms": [],
+      "Mobile Rhythms": ["ETA Bus Service"],
       "DevOps Flow": ["TaskMan", "Multi Job Scraper"]
     };
 
@@ -183,7 +205,7 @@ const Index = () => {
             />
             <ProjectShowcase 
               title="Full Stack Projects" 
-              projects={allProjects.filter(p => ["Vinylboxd", "TNAT - Student Study Platform", "TaskMan"].includes(p.title))}
+              projects={allProjects.filter(p => ["ETA Bus Service", "Vinylboxd", "TNAT - Student Study Platform", "TaskMan"].includes(p.title))}
               layout="grid"
               onProjectSelect={handleProjectSelect}
             />
