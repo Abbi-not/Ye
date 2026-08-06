@@ -6,6 +6,7 @@ import { PopularProjects } from "@/components/PopularProjects";
 import { ProjectShowcase } from "@/components/ProjectShowcase";
 import { AboutSection } from "@/components/AboutSection";
 import { ContactSection } from "@/components/ContactSection";
+import { GenreSkills } from "@/components/GenreSkills";
 import multiJobScraperImg from "@/assets/img_5893.webp";
 import vinylboxdImg from "@/assets/pala.jpg";
 import tnatImg from "@/assets/lapa.jpg";
@@ -193,22 +194,25 @@ const Index = () => {
         return (
           <>
             <HeroSection />
-            <PopularProjects 
-              projects={allProjects} 
-              onProjectSelect={handleProjectSelect} 
-            />
-            <ProjectShowcase 
-              title="Featured Projects" 
-              projects={allProjects}
-              layout="horizontal"
-              onProjectSelect={handleProjectSelect}
-            />
-            <ProjectShowcase 
-              title="Full Stack Projects" 
-              projects={allProjects.filter(p => ["ETA Bus Service", "Vinylboxd", "TNAT - Student Study Platform", "TaskMan"].includes(p.title))}
-              layout="grid"
-              onProjectSelect={handleProjectSelect}
-            />
+            <div id="projects">
+              <PopularProjects 
+                projects={allProjects} 
+                onProjectSelect={handleProjectSelect} 
+              />
+              <ProjectShowcase 
+                title="Featured Projects" 
+                projects={allProjects}
+                layout="horizontal"
+                onProjectSelect={handleProjectSelect}
+              />
+              <ProjectShowcase 
+                title="Full Stack Projects" 
+                projects={allProjects.filter(p => ["ETA Bus Service", "Vinylboxd", "TNAT - Student Study Platform", "TaskMan"].includes(p.title))}
+                layout="grid"
+                onProjectSelect={handleProjectSelect}
+              />
+            </div>
+            <GenreSkills onGenreSelect={handleGenreSelect} />
             <AboutSection />
             <ContactSection />
           </>
