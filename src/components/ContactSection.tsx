@@ -22,11 +22,11 @@ export function ContactSection() {
                 <p className="text-muted-foreground text-sm">Drop me a line</p>
               </div>
             </div>
-            <Button asChild className="w-full bg-primary hover:bg-primary/90">
-              <a href="mailto:abinetargaww@gmail.com" className="flex items-center gap-2">
-                <Mail className="w-4 h-4" />
-                abinetargaww@gmail.com
-                <ExternalLink className="w-4 h-4 ml-auto" />
+            <Button asChild className="w-full bg-primary hover:bg-primary/90 h-auto py-3">
+              <a href="mailto:abinetargaww@gmail.com" className="flex items-center gap-2 min-w-0">
+                <Mail className="w-4 h-4 flex-shrink-0" />
+                <span className="truncate">abinetargaww@gmail.com</span>
+                <ExternalLink className="w-4 h-4 ml-auto flex-shrink-0" />
               </a>
             </Button>
           </Card>
