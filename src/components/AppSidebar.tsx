@@ -25,9 +25,9 @@ import {
 } from "@/components/ui/sidebar";
 
 const navigation = [
-  { title: "Home", url: "#now-playing", icon: Home },
+  { title: "Home", url: "#home", icon: Home },
   { title: "About", url: "#about", icon: User },
-  { title: "Recent Work", url: "#albums", icon: Disc3 },
+  { title: "Recent Work", url: "#projects", icon: Disc3 },
   { title: "Skills", url: "#genres", icon: ListMusic },
   { title: "Contact", url: "#contact", icon: Calendar },
 ];
@@ -39,7 +39,7 @@ const libraryItems = [
 ];
 
 export function AppSidebar() {
-  const { state } = useSidebar();
+  const { state, isMobile, setOpenMobile } = useSidebar();
   const location = useLocation();
   const currentPath = location.pathname;
   const collapsed = state === "collapsed";
@@ -48,6 +48,10 @@ export function AppSidebar() {
     const element = document.querySelector(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+    }
+    // Close the drawer after navigating on mobile so it doesn't stay open over the page
+    if (isMobile) {
+      setOpenMobile(false);
     }
   };
 
