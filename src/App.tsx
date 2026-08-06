@@ -24,10 +24,10 @@ const App = () => (
               {/* Global trigger in header */}
               <div className="flex-1 flex flex-col">
                 <header className="h-16 border-b border-sidebar-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
-                  <div className="flex items-center h-full px-6">
-                    <SidebarTrigger className="text-sidebar-foreground hover:text-sidebar-accent-foreground" />
-                    <div className="ml-4">
-                      <h1 className="text-lg font-semibold text-foreground">Abinet Argaw</h1>
+                  <div className="flex items-center h-full px-4 sm:px-6">
+                    <SidebarTrigger className="text-sidebar-foreground hover:text-sidebar-accent-foreground flex-shrink-0" />
+                    <div className="ml-4 min-w-0">
+                      <h1 className="text-base sm:text-lg font-semibold text-foreground truncate">Abinet Argaw</h1>
                     </div>
                   </div>
                 </header>
