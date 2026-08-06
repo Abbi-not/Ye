@@ -40,27 +40,27 @@ export function GenreProjects({ genre, projects, onProjectSelect, onBack }: Genr
   const genreInfo = getGenreInfo(genre);
 
   return (
-    <section id="genre-projects" className="px-6 py-12 min-h-screen">
+    <section id="genre-projects" className="px-4 sm:px-6 py-12 min-h-screen">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="flex items-center gap-4 mb-8">
+        <div className="flex items-start sm:items-center gap-3 sm:gap-4 mb-8">
           <Button
             variant="ghost"
             size="icon"
             onClick={onBack}
-            className="text-muted-foreground hover:text-foreground"
+            className="text-muted-foreground hover:text-foreground flex-shrink-0"
           >
             <ArrowLeft className="w-5 h-5" />
           </Button>
-          <div className="flex items-center gap-4">
-            <div className={`w-16 h-16 rounded-lg bg-gradient-to-br ${genreInfo.color} flex items-center justify-center text-2xl`}>
+          <div className="flex items-center gap-3 sm:gap-4 min-w-0 flex-wrap">
+            <div className={`w-12 h-12 sm:w-16 sm:h-16 rounded-lg bg-gradient-to-br ${genreInfo.color} flex items-center justify-center text-xl sm:text-2xl flex-shrink-0`}>
               {genreInfo.icon}
             </div>
-            <div>
-              <h1 className="text-4xl font-bold text-foreground">
+            <div className="min-w-0">
+              <h1 className="text-2xl sm:text-4xl font-bold text-foreground break-words">
                 {genre}
               </h1>
-              <p className="text-xl text-muted-foreground">
+              <p className="text-base sm:text-xl text-muted-foreground">
                 {genreInfo.description} • {projects.length} projects
               </p>
             </div>
@@ -73,12 +73,13 @@ export function GenreProjects({ genre, projects, onProjectSelect, onBack }: Genr
             <Card key={project.id} className="group bg-card border-border hover:bg-card/80 transition-all duration-300 overflow-hidden">
               {/* Album Art */}
               <div className="relative aspect-square p-4">
-                <div 
-                  className="w-full h-full rounded-lg flex items-center justify-center text-white font-bold text-4xl shadow-lg group-hover:shadow-xl transition-shadow"
-                  style={{ background: project.albumArt }}
-                >
-                  {project.title.charAt(0)}
-                  
+                <div className="relative w-full h-full rounded-lg overflow-hidden shadow-lg group-hover:shadow-xl transition-shadow">
+                  <img
+                    src={project.albumArt}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                  />
+
                   {/* Play Button Overlay */}
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center">
                     <Button 
