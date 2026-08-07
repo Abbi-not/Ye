@@ -38,7 +38,7 @@ export const HeroSection = () => {
 
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 mb-6">
             <p className="text-base sm:text-lg text-muted-foreground">
-              Full-Stack Developer • 4 Projects
+              Full-Stack Developer • 15+ Projects
             </p>
           </div>
 
